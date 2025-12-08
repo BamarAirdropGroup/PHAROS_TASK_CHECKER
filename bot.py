@@ -63,17 +63,18 @@ def pretty_print(data: dict, address: str):
    ├─ Rank              : {rank} out of {total} users
    ├─ Level             : {level} → {next_lvl} ({need})
    ├─ Member Since      : {Fore.BLUE}{d['member_since'][:10]}{Style.RESET_ALL}
-   ├─ PrimusLabs Send   : {Fore.CYAN}{d['primuslabs_send']}{Style.RESET_ALL}
-   ├─ AquaFlux          : {d['aquaflux']}
-   ├─ AutoStaking       : {d['autostaking']}
-   ├─ Brokex            : {d['brokex']}
-   ├─ Lend/Borrow       : {d['lend_borrow']}
-   ├─ Atlantic Onchain  : {d['atlantic_onchain']}
-   ├─ FaroSwap Swaps    : {Fore.YELLOW}{d['faroswap_swaps']}{Style.RESET_ALL}
-   ├─ FaroSwap LP       : {d['faroswap_lp']}
-   ├─ Asseto            : {d['asseto']}
-   ├─ GrandLine         : {d['grandline']}
-   └─ Bitverse          : {d['bitverse']}
+   ├─ atlantic_onchain  : {Fore.CYAN}{d['atlantic_onchain']}{Style.RESET_ALL}
+   ├─ topnod            : {d['topnod']}
+   ├─ faroswap_swaps    : {d['faroswap_swaps']}
+   ├─ faroswap_lp       : {d['faroswap_lp']}
+   ├─ asseto            : {d['asseto']}
+   ├─ grandline         : {d['grandline']}
+   ├─ bitverse          : {Fore.YELLOW}{d['bitverse']}{Style.RESET_ALL}
+   ├─ bitverse_swap     : {d['bitverse_swap']}
+   ├─ bitverse_lp       : {d['bitverse_lp']}
+   ├─ zenith            : {d['zenith']}
+   ├─ aquaflux_earn     : {d['aquaflux_earn']}
+   └─ aquaflux_structure: {d['aquaflux_structure']}
 {Style.RESET_ALL}""")
 
 
@@ -87,17 +88,18 @@ def save_clean_result(address: str, data: dict):
             "rank": data["exact_rank"],
             "level": data["current_level"],
             "points_needed": data["points_needed"],
-            "primuslabs_send": data["primuslabs_send"],
-            "aquaflux": data["aquaflux"],
-            "autostaking": data["autostaking"],
-            "brokex": data["brokex"],
-            "lend_borrow": data["lend_borrow"],
             "atlantic_onchain": data["atlantic_onchain"],
+            "topnod": data["topnod"],
             "faroswap_swaps": data["faroswap_swaps"],
             "faroswap_lp": data["faroswap_lp"],
             "asseto": data["asseto"],
             "grandline": data["grandline"],
             "bitverse": data["bitverse"],
+            "bitverse_swap": data["bitverse_swap"],
+            "bitverse_lp": data["bitverse_lp"],
+            "zenith": data["zenith"],
+            "aquaflux_earn": data["aquaflux_earn"],
+            "aquaflux_structure": data["aquaflux_structure"],
             "member_since": data["member_since"][:10]
         }
     with open("result.txt", "a", encoding="utf-8") as f:
